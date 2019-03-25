@@ -15,7 +15,7 @@
 * `**`表示粗体
     - **粗体**
 * 代码贴入<br>
-```
+```c
 void helloworld
   {
     printf("helloworld!");
