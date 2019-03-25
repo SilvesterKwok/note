@@ -14,3 +14,11 @@
     - *强调*
 * `**`表示粗体
     - **粗体**
+* 代码贴入<br>
+```
+void helloworld
+  {
+    printf("helloworld!");
+  }
+```
+`javascript:onclick()`
