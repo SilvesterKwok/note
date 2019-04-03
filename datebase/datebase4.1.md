@@ -65,9 +65,26 @@
     * 用户连接数据库的空闲时间
     * 私有SQL区
 2. 创建概要文件
-```
+  ```
   create profile 概要文件名称 limit 资源参数 口令参数
   创建一个名为pwd_profile的概要文件 4次连续登陆失败则锁定账号 15天解锁
   create profile pwd_profile limit failed_login attemptes 4 password password_lock_time 10;
   create profile res_profile limit session pre_user 4(4个用户)connect_time 60(连60分钟) idle 20(20分中无操作断开) private_sga 100K cpu_per_call 100;
-```
+  ```
+  * 创建概要文件<br>
+    `create user user5 identified by user5 profile res_profile`
+  * 重新分配概要文件<br>
+    `alter user user5 profile pwd_profile`
+  * 修改概要文件
+  ```
+  alter profile 概要文件的名字 limit 资源参数 口令参数
+  alter profile pwd_profile limit password_life_time 10
+  ```
+  * 删除概要文件<br>
+    `drop profile 概要文件的名字 cascade`
+  * 查询概要文件
+  ```
+  user_password_limits
+  user_resource_limits
+  dba_profiles
+  ```
